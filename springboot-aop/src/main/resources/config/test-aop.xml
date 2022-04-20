@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:aop="http://www.springframework.org/schema/aop"
+           xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="orderOneAspect" class="com.yaojunjie.demo.common.aspect.OrderOneAspect"/>
+    <bean id="orderTwoAspect" class="com.yaojunjie.demo.common.aspect.OrderTwoAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="orderTwoAspect" order="1">
+            <aop:pointcut id="controllerTwo" expression="execution(* com.yaojunjie..*.*(..))"></aop:pointcut>
+            <aop:around method="twoAround" pointcut-ref="controllerTwo"></aop:around>
+        </aop:aspect>
+
+        <aop:aspect ref="orderOneAspect" order="1">
+            <aop:pointcut id="controllerOne" expression="execution(* com.yaojunjie..*.*(..))"></aop:pointcut>
+            <aop:before method="oneBefore" pointcut-ref="controllerOne"></aop:before>
+            <aop:after method="oneAfter" pointcut-ref="controllerOne"></aop:after>
+        </aop:aspect>
+
+
+
+    </aop:config>
+</beans>
