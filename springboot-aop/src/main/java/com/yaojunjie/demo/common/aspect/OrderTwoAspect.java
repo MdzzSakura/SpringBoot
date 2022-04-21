@@ -9,11 +9,23 @@ import org.aspectj.lang.ProceedingJoinPoint;
  * @create: 2022-04-20
  **/
 public class OrderTwoAspect {
+
+    public void twoBefore() {
+        System.out.println("我是twoBefore");
+    }
+
+    public void twoAfter() {
+        System.out.println("我是twoAfter");
+    }
+
     public Object twoAround(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("环绕前");
-        System.out.println("我是twoAround");
+        System.out.println("twoAround环绕前");
         Object process = pjp.proceed();
-        System.out.println("环绕后");
+        System.out.println("twoAround环绕后");
         return process;
+    }
+
+    public void twoAfterReturning() throws Throwable {
+        System.out.println("我是twoAfterReturning");
     }
 }
