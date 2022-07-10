@@ -8,8 +8,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-<!--    <bean id="orderOneAspect" class="com.yaojunjie.demo.common.aspect.OrderOneAspect"/>-->
-    <bean id="orderTwoAspect" class="com.yaojunjie.demo.common.aspect.OrderTwoAspect"/>
+<!--    <bean id="orderOneAspect" class="OrderOneAspect"/>-->
+    <bean id="orderTwoAspect" class="com.yjj.demo.common.aspect.OrderTwoAspect"/>
 
     <aop:config>
         <aop:aspect ref="orderTwoAspect" order="1">

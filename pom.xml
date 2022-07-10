@@ -17,7 +17,8 @@
 
 	<modules>
 		<module>springboot-aop</module>
-	</modules>
+        <module>springboot-elasticsearch</module>
+    </modules>
 
     <packaging>pom</packaging>
 	<properties>

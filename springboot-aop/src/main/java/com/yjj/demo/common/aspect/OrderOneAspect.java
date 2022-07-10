@@ -1,4 +1,4 @@
-package com.yaojunjie.demo.common.aspect;
+package com.yjj.demo.common.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;

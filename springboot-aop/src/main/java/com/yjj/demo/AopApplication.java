@@ -1,4 +1,4 @@
-package com.yaojunjie.demo;
+package com.yjj.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({
 		"classpath:config/test-aop.xml"
 })
-public class DemoApplication {
+public class AopApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(AopApplication.class, args);
 	}
 
 }
