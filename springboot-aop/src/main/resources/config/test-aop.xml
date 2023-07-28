@@ -14,11 +14,12 @@
     <aop:config>
         <aop:aspect ref="orderTwoAspect" order="1">
             <aop:pointcut id="controllerTwo" expression="execution(* com.yaojunjie..*.*(..))"></aop:pointcut>
-
-            <aop:after-returning method="twoAfterReturning" pointcut-ref="controllerTwo"></aop:after-returning>
-            <aop:after method="twoAfter" pointcut-ref="controllerTwo"></aop:after>
-            <aop:around method="twoAround" pointcut-ref="controllerTwo"></aop:around>
             <aop:before method="twoBefore" pointcut-ref="controllerTwo"></aop:before>
+            <aop:after method="twoAfter" pointcut-ref="controllerTwo"></aop:after>
+            <aop:after-returning method="twoAfterReturning" pointcut-ref="controllerTwo"></aop:after-returning>
+
+            <aop:around method="twoAround" pointcut-ref="controllerTwo"></aop:around>
+
 
         </aop:aspect>
 
